@@ -1,0 +1,4 @@
+homepage - main, about (short), serviuce time, location, contact
+    - header:
+        -logo
+        - nav: home, about, sermons, contact, give
