@@ -76,10 +76,17 @@ main p {
   align-items: center;
   gap: 3rem;
   padding: 3rem;
-
-  background: linear-gradient(to left, #000000, #000000dd, #ffffff, #ffffff);
+  height: max-content;
 }
-
+.about-text,
+.about-image {
+  flex: 1;
+}
+.about-text > img {
+  width: 40px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
 .about-text h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -104,12 +111,36 @@ main p {
 .about-text p:last-child {
   margin-top: 1rem;
 }
+.about-image {
+  position: relative;
+
+  height: 500px;
+  z-index: 0;
+}
 .about-image img {
-  flex: 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  min-height: 300px;
+  width: 70%;
+  height: 400px;
+  object-fit: cover;
+  z-index: 0;
+}
+.about-image::after {
+  content: "";
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  /* background-color: blueviolet; */
   background-image: url("../images/about.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 15px;
   min-height: 300px;
-  width: 100%;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
 }
