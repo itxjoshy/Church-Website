@@ -13,7 +13,7 @@ main .wrapper__main {
       #00000000,
       #00000000
     ),
-    url("../images/hero.jpg");
+    url("https://img.freepik.com/free-photo/inside-view-church-with-religious-icons-windows-stone-arches_181624-16218.jpg?t=st=1767528621~exp=1767532221~hmac=128fa9d41474cdb3c532a334ae4d7dd187f767d2701fa0e7ca31e309143a880a&w=2000");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -59,8 +59,8 @@ main p {
 }
 .about-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.5fr 2fr;
+  place-items: center;
   width: 100%;
   padding: 6rem 0;
 }
@@ -70,23 +70,58 @@ main p {
     width: 100%;
     height: 600px;
     object-fit: cover;
+    object-position: top;
     border-radius: 20px;
-  }
-  h2,
-  p {
-    color: black;
-  }
-  .about-text {
-    align-self: center;
+    transform: scaleX(-1);
   }
 }
+.img__wrapper__about {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+/* .img__wrapper__about::after {
+  content: "";
+  position: absolute;
+  background-image: url("https://img.freepik.com/free-photo/abstract-grunge-red-background_1258-340.jpg?w=2000");
+  background-size: cover;
+  width: 40%;
+  height: 40%;
+  top: -40px;
+  right: -20px;
+  border-radius: 2%;
+  background-color: red;
+  z-index: 1;
+}
+.img__wrapper__about::before {
+  content: "";
+  position: absolute;
+  background-image: url("https://img.freepik.com/free-photo/abstract-grunge-red-background_1258-340.jpg?w=2000");
+  background-size: cover;
+  width: 35%;
+  height: 35%;
+  bottom: -80px;
+  left: -40px;
+  border-radius: 2%;
+  background-color: red;
+  z-index: 1;
+} */
+.img__wrapper__about:hover::after {
+  background: rgba(0, 0, 0, 0.8);
+}
+.about-text {
+  align-self: center;
+  width: max-content;
+}
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 p {
   font-size: 1.07rem;
   line-height: 1.6;
+  max-width: 600px;
 }
 .join-section {
   padding: 6rem 0;
