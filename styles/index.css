@@ -1,16 +1,11 @@
 main {
-  width: 100%;
-  padding: 20px;
-  height: auto;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr;
 }
-main .container {
+main .wrapper__main {
   width: 100%;
-  max-width: 87rem;
-  margin: 0 auto;
-  border-radius: 20px;
-  padding-left: 7rem;
-  padding-bottom: 5rem;
-
+  height: 100%;
   background-image: linear-gradient(
       to right,
       #000000,
@@ -23,24 +18,26 @@ main .container {
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
 }
 main h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   text-transform: uppercase;
   line-height: 1.2;
 }
 main p {
   font-size: 1rem;
-  margin-top: 1rem;
+
   text-transform: capitalize;
+  text-align: center;
 }
 .cta-buttons .primary-cta {
   padding: 10px 50px;
   background-color: var(--accent-color);
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   color: white;
   text-transform: uppercase;
   cursor: pointer;
@@ -51,7 +48,7 @@ main p {
   padding: 10px 50px;
   background-color: rgba(255, 255, 255, 0.065);
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   color: var(--primary-color-text);
   text-transform: uppercase;
   cursor: pointer;
@@ -60,87 +57,90 @@ main p {
 .cta-buttons .primary-cta:hover {
   opacity: 0.9;
 }
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  padding: 6rem 0;
+}
 
-.serv-time {
-  display: flex;
-  gap: 4rem;
-  margin-top: 3rem;
+.about-section {
+  img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  h2,
+  p {
+    color: black;
+  }
+  .about-text {
+    align-self: center;
+  }
 }
-.serv-time div p {
-  font-size: 0.9rem;
-  text-transform: capitalize;
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
 }
-.about-container {
-  border-radius: 20px;
+p {
+  font-size: 1.07rem;
+  line-height: 1.6;
+}
+.join-section {
+  padding: 6rem 0;
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 3rem;
-  padding: 3rem;
-  height: max-content;
 }
-.about-text,
-.about-image {
-  flex: 1;
-}
-.about-text > img {
-  width: 40px;
-  margin-bottom: 1rem;
-  opacity: 0.5;
-}
-.about-text h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  color: #000000;
-}
-.about-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #000000;
-}
-.about-container button {
-  margin-top: 2rem;
-  padding: 10px 40px;
-  background-color: var(--accent-color);
-  border: none;
-  border-radius: 2px;
-  color: white;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.about-text p:last-child {
-  margin-top: 1rem;
-}
-.about-image {
-  position: relative;
-
-  height: 500px;
-  z-index: 0;
-}
-.about-image img {
+.wrapper__join {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url("https://img.freepik.com/free-photo/empty-christian-church-building_23-2151103910.jpg?t=st=1767527664~exp=1767531264~hmac=35fe4bf21a6526831c04ebe763e879039c87f0e02da02d191f287358c6cc396e&w=2000");
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  min-height: 300px;
-  width: 70%;
-  height: 400px;
-  object-fit: cover;
-  z-index: 0;
 }
-.about-image::after {
-  content: "";
-  position: absolute;
-  left: 100px;
-  top: 100px;
-  right: 0;
-  bottom: 0;
-  /* background-color: blueviolet; */
-  background-image: url("../images/about.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  min-height: 300px;
-  width: 400px;
-  height: 400px;
-  z-index: 1;
+.join-section {
+  h2,
+  p {
+    color: rgb(255, 255, 255);
+  }
+  h2 {
+    font-size: 2.1rem;
+  }
+  p {
+    font-size: 0.9rem;
+    max-width: 600px;
+  }
+  .embed-map-responsive {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 0;
+    padding-bottom: 35.714285714285715%;
+  }
+  .embed-map-container {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+  }
+  .embed-map-frame {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
